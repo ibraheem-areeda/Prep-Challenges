@@ -19,12 +19,12 @@
 //  Note that:
 //  1- The text template is "my name is ** ** I am ** YO, and I love **."
 //  2- The first letters of the firstName and lastName should be capital letter
-
-
-const objLat = (obj) => {
+function objLat (obj) {
     // write your code here
     let firstNameCapitalized = obj.firstName.charAt(0).toUpperCase() + obj.firstName.slice(1);
+    console.log(firstNameCapitalized);
     let lastNameCapitalized = obj.lastName.charAt(0).toUpperCase() + obj.lastName.slice(1);
+    console.log(lastNameCapitalized);
     let text = `my name is ${firstNameCapitalized} ${lastNameCapitalized} I am ${obj.age} YO, and I love ${obj.hobby}.`
     return text
 };
@@ -91,7 +91,7 @@ const objLat = (obj) => {
 //  1- Full name is first name + last name
 //  2- If one of the names is null don`t add it to the full name
 
-const cvFormatter = (arr) => {
+function cvFormatter (arr) {
     // write your code here
     let formatedArr = []
     for (let i = 0; i < arr.length; i++) {
@@ -152,18 +152,18 @@ const cvFormatter = (arr) => {
 //  Note that:
 //  1- rejectedApplicants are applications that has both the names empty or null and whoever have one year or less of Experience
 
-const applicationsStatics = (arr) => {
-    // write your code here
-let statisticsObj={}
+// const applicationsStatics = (arr) => {
+//     // write your code here
+// let statisticsObj={}
 
 
-for(let i = 0; i<arr.length ; i++){
-    arr[i].tech == "Python" ? : tatisticsObj.python_devs 
-}
+// for(let i = 0; i<arr.length ; i++){
+//     arr[i].tech == "Python" ? : tatisticsObj.python_devs 
+// }
 
 
 
-};
+// };
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -176,121 +176,121 @@ for(let i = 0; i<arr.length ; i++){
 //  given the school data, calculate the average score of the students of each class in each grade
 //  then change the avg value for the class
 //  Input:
-let data = {
-    schoolName: "David Academy",
-    capacity: 1000,
-    grades: [
-        {
-            grade: "First",
-            numberOfClasses: 3,
-            classes: [
-                {
-                    avg: 0,
-                    classNumber: "01",
-                    classScores: [
-                        89, 87, 45, 48, 89, 65, 21, 54, 78, 62, 51, 54, 50, 49
-                    ]
-                },
-                {
-                    avg: 0,
-                    classNumber: "02",
-                    classScores: [
-                        87, 54, 95, 45, 41, 51, 25, 63, 58, 47, 64, 51, 98, 100
-                    ]
-                },
-                {
-                    avg: 0,
-                    classNumber: "03",
-                    classScores: [
-                        74, 85, 20, 51, 59, 58, 62, 71, 74, 99, 84, 71, 38, 70
-                    ]
-                },
-            ]
-        },
-        {
-            grade: "Second",
-            numberOfClasses: 2,
-            classes: [
-                {
-                    avg: 0,
-                    classNumber: "01",
-                    classScores: [
-                        71, 82, 86, 3, 1, 52, 91, 84, 44, 68, 64, 23, 80, 60,
-                    ]
-                },
-                {
-                    avg: 0,
-                    classNumber: "02",
-                    classScores: [
-                        86, 39, 71, 17, 61, 76, 60, 54, 42, 65, 49, 75, 96, 70
-                    ]
-                },
-            ]
-        },
-        {
-            grade: "Third",
-            numberOfClasses: 2,
-            classes: [
-                {
-                    avg: 0,
-                    classNumber: "01",
-                    classScores: [
-                        11, 12, 28, 78, 57, 3, 54, 72, 14, 19, 88, 74, 68, 58
-                    ]
-                },
-                {
-                    avg: 0,
-                    classNumber: "02",
-                    classScores: [
-                        62, 8, 35, 43, 96, 9, 97, 73, 4, 32, 18, 81, 70, 42
-                    ]
-                },
-            ]
-        },
-        {
-            grade: "Forth",
-            numberOfClasses: 4,
-            classes: [
-                {
-                    avg: 0,
-                    classNumber: "01",
-                    classScores: [
-                        63, 71, 93, 87, 83, 85, 67, 49, 62, 45, 38, 48, 58, 52
-                    ]
-                },
-                {
-                    avg: 0,
-                    classNumber: "02",
-                    classScores: [
-                        100, 45, 70, 75, 87, 63, 39, 46, 54, 68, 74, 96, 52, 49
-                    ]
-                },
-                {
-                    avg: 0,
-                    classNumber: "03",
-                    classScores: [
-                        97, 54, 80, 95, 69, 31, 88, 84, 50, 81, 67, 34, 41, 87
-                    ]
-                },
-                {
-                    avg: 0,
-                    classNumber: "04",
-                    classScores: [
-                        64, 96, 66, 38, 78, 58, 43, 100, 34, 56, 82, 53, 89, 72
-                    ]
-                },
-            ]
-        },
-    ],
-};
+// let data = {
+//     schoolName: "David Academy",
+//     capacity: 1000,
+//     grades: [
+//         {
+//             grade: "First",
+//             numberOfClasses: 3,
+//             classes: [
+//                 {
+//                     avg: 0,
+//                     classNumber: "01",
+//                     classScores: [
+//                         89, 87, 45, 48, 89, 65, 21, 54, 78, 62, 51, 54, 50, 49
+//                     ]
+//                 },
+//                 {
+//                     avg: 0,
+//                     classNumber: "02",
+//                     classScores: [
+//                         87, 54, 95, 45, 41, 51, 25, 63, 58, 47, 64, 51, 98, 100
+//                     ]
+//                 },
+//                 {
+//                     avg: 0,
+//                     classNumber: "03",
+//                     classScores: [
+//                         74, 85, 20, 51, 59, 58, 62, 71, 74, 99, 84, 71, 38, 70
+//                     ]
+//                 },
+//             ]
+//         },
+//         {
+//             grade: "Second",
+//             numberOfClasses: 2,
+//             classes: [
+//                 {
+//                     avg: 0,
+//                     classNumber: "01",
+//                     classScores: [
+//                         71, 82, 86, 3, 1, 52, 91, 84, 44, 68, 64, 23, 80, 60,
+//                     ]
+//                 },
+//                 {
+//                     avg: 0,
+//                     classNumber: "02",
+//                     classScores: [
+//                         86, 39, 71, 17, 61, 76, 60, 54, 42, 65, 49, 75, 96, 70
+//                     ]
+//                 },
+//             ]
+//         },
+//         {
+//             grade: "Third",
+//             numberOfClasses: 2,
+//             classes: [
+//                 {
+//                     avg: 0,
+//                     classNumber: "01",
+//                     classScores: [
+//                         11, 12, 28, 78, 57, 3, 54, 72, 14, 19, 88, 74, 68, 58
+//                     ]
+//                 },
+//                 {
+//                     avg: 0,
+//                     classNumber: "02",
+//                     classScores: [
+//                         62, 8, 35, 43, 96, 9, 97, 73, 4, 32, 18, 81, 70, 42
+//                     ]
+//                 },
+//             ]
+//         },
+//         {
+//             grade: "Forth",
+//             numberOfClasses: 4,
+//             classes: [
+//                 {
+//                     avg: 0,
+//                     classNumber: "01",
+//                     classScores: [
+//                         63, 71, 93, 87, 83, 85, 67, 49, 62, 45, 38, 48, 58, 52
+//                     ]
+//                 },
+//                 {
+//                     avg: 0,
+//                     classNumber: "02",
+//                     classScores: [
+//                         100, 45, 70, 75, 87, 63, 39, 46, 54, 68, 74, 96, 52, 49
+//                     ]
+//                 },
+//                 {
+//                     avg: 0,
+//                     classNumber: "03",
+//                     classScores: [
+//                         97, 54, 80, 95, 69, 31, 88, 84, 50, 81, 67, 34, 41, 87
+//                     ]
+//                 },
+//                 {
+//                     avg: 0,
+//                     classNumber: "04",
+//                     classScores: [
+//                         64, 96, 66, 38, 78, 58, 43, 100, 34, 56, 82, 53, 89, 72
+//                     ]
+//                 },
+//             ]
+//         },
+//     ],
+// };
 
 //  Note that:
 //  1- This is not the exact data you will be getting every time and the solution should be dynamic
 //  2- You need to round the average to the nearest lower number 
 
-const classesAvg = (data) => {
+// const classesAvg = (data) => {
     // write your code here
-};
+// };
 // -------------------------------------------------------------------------------------------------------
 
-module.exports = { objLat, cvFormatter, applicationsStatics, classesAvg };
+module.exports = { objLat, cvFormatter, };
