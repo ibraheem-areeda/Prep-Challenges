@@ -19,8 +19,8 @@
 
 const oddFiltration = (arr) => {
     // write your code here
-   let oddValues = arr.filter(value => value % 2 !== 0);
-   return oddValues
+    let oddNum = arr.filter(num => num % 2 == 1)
+    return oddNum
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -72,7 +72,20 @@ const oddFiltration = (arr) => {
 //  2- If one of the names is null dont add it to the full name
 
 const cvsFiltration = (arr) => {
-    // write your code here
+    let filterdArr = arr.filter(elemtent => elemtent.yearsOfExperience > 4 && elemtent.tech == "JS")
+
+
+
+    let nameArray = filterdArr.map(elemtent => {
+        if (elemtent.firstName != null && elemtent.LastName != null) {
+            return {
+                fullName: `${elemtent.firstName} ${elemtent.LastName}`,
+                tech: `${elemtent.tech}`
+            }
+
+        }
+    })
+    return nameArray
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -88,7 +101,11 @@ const cvsFiltration = (arr) => {
 
 const vowelsFiltration = (arr) => {
     // write your code here
-} 
+    let vol = arr.filter( str => /^[^aeiou]*$/gm.test(str) )
+    return vol
+    }
+    
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -109,8 +126,19 @@ const vowelsFiltration = (arr) => {
 // - the 'include' method can help you, read about it.
 
 const skillComparison = (arr1, arr2) => {
-    // write your code here
+    let comp1 = arr1.filter(skill=> arr2.includes(skill))
+
+let comp2 = arr1.filter(skill=> comp1.includes(skill)!=true)
+
+let comp3 = arr2.filter(skill=> comp1.includes(skill)!=true)
+
+let finalArr = []
+finalArr =  comp3
+comp2.forEach(ele => finalArr.push(ele))
+
+return console.log(finalArr); 
 }
+    
 // -------------------------------------------------------------------------------------------------------
 
 
