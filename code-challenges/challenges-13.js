@@ -41,11 +41,13 @@
 const objectCounter = (obj) => {
     // write your code here
 
-let cout = obj.reduce((acc ,current,index,arr) => {
-  
+let cout = obj.reduce((acc) => {
+ acc++
+return acc
+},0)
+  return cout
 }
 
-)}
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -65,8 +67,18 @@ let cout = obj.reduce((acc ,current,index,arr) => {
 
 const stringReverse = (str) => {
     // write your code here
+    let arr = str.split(" ")
+    let rev = arr.reduce((acc, currentValue) => {
+        acc.unshift(currentValue)
+        return acc
+
+        
+    },[])
+
+    return rev.join(" ")
 
 }
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -108,8 +120,18 @@ const stringReverse = (str) => {
 // };
 //
 
-const statistics = (obj) => {
+const statistics = (arr) => {
     // write your code here
+    let res = arr.reduce((acc, current) => {
+        let key = current["votes_To"]
+      
+         acc[key] =( acc[key] ||0) +1
+        // console.log(acc)
+        return acc
+
+    }, {})
+    return res
+
 }
 // -------------------------------------------------------------------------------------------------------
 
