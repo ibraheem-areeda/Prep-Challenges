@@ -111,9 +111,9 @@ const stringReverse = (str) => {
 //         votes_To: "Bailey",
 //     }
 // ];
-//
+//ok
 // Output:
-// let res = {
+// let res= {
 //     James: 1,
 //     Jade: 2,
 //     Bailey: 2
