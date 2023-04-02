@@ -14,8 +14,15 @@
 
 const reverseString = (string) => {
     //write your code here ...
-
-    
+let arr=[]
+let reversed =""
+let exp = [...string]
+exp.forEach(ele=>{
+    arr.unshift(ele)
+})
+reversed = arr.join(",")
+reversed = reversed.replace(/,/g, "")
+    return reversed
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -32,6 +39,13 @@ const reverseString = (string) => {
 
 const detectFace = (arr) => {
     //write your code here ...
+    let res=[]
+    arr.forEach(ele=>{
+        if (ele.indexOf("^_^")>0) {
+            res.push(ele)
+        }
+    })
+    return res
 }
 // -------------------------------------------------------------------------------------------------------
 
