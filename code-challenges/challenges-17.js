@@ -14,9 +14,20 @@
 // Output: [50, 41, 32, 23, 14, 5, -4, 5, 14, 23, 32, 41, 50]
 //
 
-const recursionPattern = (int1, int2) => {
-    // write your code here
-}
+const recursionPattern = (int1, int2, result = []) => {
+    if (int1 <= 0) {
+      return result;
+    }
+    
+    result.push(int1);
+    
+    if (result.length % 2 === 0) {
+      int2 = -int2;
+    }
+    
+    return recursionPattern(int1 + int2, int2, result);
+  };
+  
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -34,8 +45,12 @@ const recursionPattern = (int1, int2) => {
 // 
 
 const filterLinks = (str) => {
-    // write your code here
-}
+    const regex = /href="(.*?\.(?:com|org|net))"/i;
+    const match = str.match(regex);
+    
+    return match ? match[1] : null;
+  };
+  
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -52,9 +67,21 @@ const filterLinks = (str) => {
 // as you can see "amanaplanacanalpanama" is a palindrome.
 //
 
-const isPalindrome = (str) => {
-    // write your code here
-}
+var isPalindrome = function (s) {
+    let arr1 = [],
+        arr2 = [];
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] >= 'A' && s[i] <= 'Z') {
+            arr1.push(s[i].toLowerCase());
+        }
+        if ((s[i] >= '0' && s[i] <= '9') || (s[i] >= 'a' && s[i] <= 'z')) {
+            arr1.push(s[i]);
+        }
+    }
+    arr2 = [...arr1];
+    arr2.reverse();
+    return arr1.join('') === arr2.join('');
+};
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
