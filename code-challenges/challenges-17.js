@@ -14,19 +14,29 @@
 // Output: [50, 41, 32, 23, 14, 5, -4, 5, 14, 23, 32, 41, 50]
 //
 
-const recursionPattern = (int1, int2, result = []) => {
-    if (int1 <= 0) {
-      return result;
-    }
+ 
+function recursionPattern(num,inc,result = []) {
+
     
-    result.push(int1);
     
-    if (result.length % 2 === 0) {
-      int2 = -int2;
-    }
-    
-    return recursionPattern(int1 + int2, int2, result);
-  };
+  if (num <= -inc) {
+    return;
+  }
+  
+  // if(num > 0){console.log(num)}
+  if(num>0){result.push(num)}
+
+  recursionPattern(num - inc,inc,result);
+
+  // console.log(num);
+  result.push(num)
+  return result
+
+}
+
+
+  
+  
   
 // -------------------------------------------------------------------------------------------------------
 
@@ -45,7 +55,9 @@ const recursionPattern = (int1, int2, result = []) => {
 // 
 
 const filterLinks = (str) => {
-    const regex = /href="(.*?\.(?:com|org|net))"/i;
+  const regex = /http:\/\/(.*?\.(?:com|org|net))"/i;
+
+
     const match = str.match(regex);
     
     return match ? match[1] : null;
