@@ -15,8 +15,15 @@
 //
 
 const wordLength = (str) => {
-    // write your code here
-}
+    let words = str.split(" ");
+    console.log(words)
+    let middleIndex = Math.floor(words.length / 2);
+    console.log(middleIndex)
+    let middleWord = words[middleIndex];
+    console.log(middleWord)
+    return middleWord.length;
+  }
+  
 // -------------------------------------------------------------------------------------------------------
 
 
@@ -40,8 +47,25 @@ const wordLength = (str) => {
 // Output: false
 
 const wordLetters = (str1, str2) => {
-    // write your code here
+    
+    if (str1.length !== str2.length) {
+        return false;
+    }
+
+    
+    const str1Arr = str1.split('').sort();
+    const str2Arr = str2.split('').sort();
+
+    
+    for (let i = 0; i < str1Arr.length; i++) {
+        if (str1Arr[i] !== str2Arr[i]) {
+            return false;
+        }
+    }
+
+    return true;
 }
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -64,8 +88,24 @@ const wordLetters = (str1, str2) => {
 //
 
 const targetIndex = (arr, int) => {
-    // write your code here
+    let left = 0;
+    let right = arr.length - 1;
+
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+
+        if (arr[mid] === int) {
+            return mid;
+        } else if (arr[mid] > int) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+
+    return left;
 }
+
 // -------------------------------------------------------------------------------------------------------
 
 module.exports = { wordLength, wordLetters, targetIndex };
