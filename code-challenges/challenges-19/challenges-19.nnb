@@ -24,7 +24,7 @@
         {
             "language": "javascript",
             "source": [
-                "function appendAndDelete(s, t, k) {\n    let arrayS= s.split(\"\")\n    let arrayT = t.split(\"\")\n    let count = 0\n    for (let i = 0; i === count && i < s.length; i++) {\n        if (sArr[i] === tArr[i]) {\n            count++\n        }\n    }\n\n    let tMoveCount = arrayT - count\n    let sMoveCount = arrayS - count\n\n    let STK = k - (tMoveCount + sMoveCount)\n\n    if (tMoveCount + sMoveCount < k && t.length + s.length > k && STK % 2 !== 0) {\n        return \"No\"\n    } else if (tMoveCount + sMoveCount <= k) {\n        return \"Yes\"\n    } else {\n        return \"No\"\n    }\n}"
+                "function appendAndDelete(s, t, k) {\n    for (var i = 0; i < s.length; i++) {\n        if (s[i] !== t[i]) break;\n    };\n    let z = (s.length + t.length) - (i * 2);\n    if (k >= s.length + t.length) return 'Yes'\n    else if (z % 2 === k % 2 && z <= k) return 'Yes';\n    else return 'No';\n};"
             ],
             "outputs": []
         },
